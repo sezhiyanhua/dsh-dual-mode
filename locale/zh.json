@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek 双模式",
+    "description": "在本地 Harness Agent 与你自己的 DeepSeek 网页对话之间切换，把网页讨论提取为开发指令发送到 Harness 会话，并把执行结果带回网页模型继续讨论。"
+  }
+}

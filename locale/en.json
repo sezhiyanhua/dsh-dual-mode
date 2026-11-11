@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "DeepSeek Dual Mode",
+    "description": "Switch between the local Harness agent and your own DeepSeek web chat, extract instructions into Harness sessions, and bring execution results back to the web model."
+  }
+}
