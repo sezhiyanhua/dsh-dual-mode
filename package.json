@@ -1,6 +1,6 @@
-{
+﻿{
   "name": "dsh-dual-mode",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "DeepSeek Dual Mode: a native Harness/Chat switcher that drives the real chat.deepseek.com web UI in a persistent browser profile, extracts instructions for Harness sessions and brings execution results back to the web chat.",
   "icon": "icon.svg",
   "type": "module",

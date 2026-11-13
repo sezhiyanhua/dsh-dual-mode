@@ -72,6 +72,22 @@ once in the window the adapter opens.
 - Harness sends go through the official `sessionController.prompt` API with `mode: 'queue'`,
   so a running Harness task is never interrupted.
 
+## Route security
+
+The plugin serves its own endpoints under `/dual-mode/` (chat store, browser control,
+send/result bridge). Every request is admitted through the Harness connection service
+(`ctx.connection.requestRejection`), so only same-origin requests from the authenticated
+Harness web client are accepted:
+
+- Host must be loopback (`127.0.0.1`, `localhost`, `[::1]`);
+- `sec-fetch-site: cross-site` is rejected;
+- a present `Origin` must match `Host`;
+- no authenticated browser peer → `401`.
+
+Cross-site or unauthenticated callers get `403` / `401` JSON instead of touching the chat
+store or the automation browser. If the connection service is unavailable, the plugin falls
+back to the same loopback + Origin fence.
+
 ## Limitations
 
 - DSH has no message-level context-menu slot. The plugin listens for `contextmenu` inside
